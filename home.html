@@ -15,7 +15,7 @@
         <div class="bg-light">
             <div class="container d-none d-lg-flex justify-content-center justify-content-md-between">
                 <div class="contact-info d-flex align-items-center">
-                  <i class="bi bi-envelope d-flex align-items-center"><a href="wellBeing:contact@google.com">&nbsp contact@google.com</a></i>
+                  <i class="bi bi-envelope d-flex align-items-center"><a href="wellBeing:contact@gmail.com">&nbsp contact@gmail.com</a></i>
                   <i class="bi bi-phone d-flex align-items-center ms-4"><span>+977 9874563210</span></i>
                 </div>
                 <div class="social-links d-flex gap-3 align-items-center">
@@ -31,7 +31,7 @@
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img class="logo" src="../images/WellBeingLogo.png" alt="Well Being Logo">
-                    <span class="text-light">&nbsp Well being</span>
+                    <span class="text-light">&nbsp Well Being</span>
                 </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-light">
                     <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="#">Home</a>
+                        <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link text-light" href="#services">Our Services</a>
@@ -307,7 +307,7 @@
                         </div>
                         <div class="col-lg-8">
                             <h3>Email Us</h3>
-                            <p>wellBeing:contact@google.com</p>
+                            <p>wellBeing:contact@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -380,17 +380,17 @@
                         </div>
                         <div class="col-lg-8">
                             <h3>Email Us</h3>
-                            <p>wellBeing:contact@google.com</p>
+                            <p>wellBeing:contact@gmail.com</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <h2>Useful Links</h2>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Our Services</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Contact Us</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#aboutUs">About Us</a></li>
+                        <li><a href="#contactUs">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
@@ -500,6 +500,32 @@ function getRandomInt(min, max) {
             icon.classList.toggle('bi-chevron-down');
             icon.classList.toggle('bi-chevron-up');
         });
+    </script>
+    <script>
+        // JavaScript to add "active" class to navbar links based on the section in view
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});
+
     </script>
 </body>
 </html>
