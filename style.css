@@ -1,0 +1,411 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#3674B5;
+    --secondary-color:#578FCA;
+    --turtey-color:#A1E3F9;
+    --last-color:#D1F8EF;
+    --white:#ffff;
+    --blacks:#0000;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+.navbar{
+    position: relative;
+    width: 100%;
+    background-color: var(--primary-color);
+    transition: top 0.3s ease-in-out;
+    width: 100%;
+}
+
+.logo{
+    width: 50px;
+}
+
+.quote { 
+    background: url('../images/quote-bg.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative; /* Ensure positioning remains relative */
+    height: auto;
+}
+
+.quotes-box {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vw;
+    color: var(--last-color);
+    font-size: 2.5vw; /* Responsive font size */
+    font-weight: bold;
+    text-align: center;
+}
+
+.qoute-pag {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 3vw; /* Make text responsive */
+    max-width: 80%; /* Prevent text from overflowing */
+}
+
+/* Responsive box-2 */
+.qoutes-box-2 {
+    width: 30vw; /* Use a percentage for better adaptability */
+    max-width: 350px; /* Prevent it from being too large on big screens */
+    height: auto; /* Allow the height to adjust dynamically */
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    padding: 2vw;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .qoute-pag {
+        top: 5%;
+        right: 5%;
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .quotes-box {
+        height: 400px;
+        font-size: 4vw;
+        padding: 3vw;
+    }
+
+    .qoutes-box-2 {
+        width: 80%;
+        right: 10%;
+        top: 20%;
+        padding: 3vw;
+    }
+    .quote{
+        height: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .qoute-pag {
+        top: 2%;
+        right: 5%;
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .quotes-box {
+        height: 300px;
+        font-size: 5vw;
+        padding: 2vw;
+    }
+
+    .qoutes-box-2 {
+        width: 90%; /* Almost full width on small screens */
+        right: 5%;
+        left: 5%;
+        top: 15%;
+        padding: 4vw;
+    }
+}
+
+.btn-custom{
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.537);
+    color: black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#services{
+    background-color: var(--secondary-color);
+}
+
+.services-header{
+    display: inline;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.services-header-box{
+    height: 30px;
+    cursor: pointer;
+}
+
+.services-quote{
+    font-size: 20px;
+    color: var(--last-color);
+    margin-top: 10px;
+}
+
+.services-header:hover{
+    color: var(--black);
+}
+
+
+.service-img-card{
+    width: 100%;
+    height: 300px;
+    overflow: hidden !important;
+}
+
+.service-card{
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: var(--turtey-color) 10px 10px;
+}
+
+.service-card img{
+    width: 100%;
+    height: 300px;
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.service-card h3{
+    font-size: 25px;
+    color: var(--black) ;
+    margin: 10px 0;
+}
+
+.service-card p{
+    font-size: 18px;
+    color: var(--last-color);
+}
+
+.service-card:hover{
+    background-color: var(--turtey-color);
+    box-shadow: var(--last-color) 10px 10px;
+}
+
+.service-card:hover img{
+    transform: scale(1.5);
+    z-index: 1;
+}
+
+.service-card:hover p{
+    color: var(--primary-color);
+}
+
+.marginCustom{
+    border-bottom: 3px solid black;
+    margin: 10px;
+}
+
+/* Modal Dialog */
+.modal-lg {
+    max-width: 90% !important; /* Makes the modal larger */
+}
+
+.modal-content {
+    border-radius: 10px; /* Round corners for the modal */
+    background: #f8f9fa; /* Light background for the modal */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Modal Header */
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    border-bottom: none;
+    padding: 20px;
+}
+
+.modal-title {
+    font-size: 1.75rem; /* Larger font size for the title */
+    font-weight: 600;
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 30px 15px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+.yoga-img-container {
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.yoga-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    border: 5px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.yoga-step-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.yoga-steps {
+    list-style: none;
+    padding-left: 0;
+}
+
+.yoga-steps li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.yoga-steps strong {
+    color: #007bff;
+}
+
+/* Modal Footer */
+.modal-footer {
+    background: #f8f9fa;
+    border-top: none;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.cssanimation, .cssanimation span {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.leSnake span { animation: leSnake 1.5s ease-in-out; animation-iteration-count: infinite }
+@keyframes leSnake {
+    from, to { transform: translateY(0px) }
+    50% { transform: translateY(30px) }
+}
+
+.aboutImg{
+    width: 550px;
+    height: 500px;
+    box-shadow: var(--turtey-color) 10px 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.aboutUs-icon{
+    font-size: 30px;
+    color: var(--last-color);
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+#contactUs{
+    background-color: var(--secondary-color);
+}
+
+.contactUs-icon{
+    font-size: 30px;
+    color: var(--black);
+}
+
+.ciricle{
+    width: 60px;
+    height: 60px;
+    background-color: var(--turtey-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-custom {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+footer{
+    background: var(--last-color);
+}
+
+footer ul li{
+    list-style: none;
+    font-size: 22px;
+}
