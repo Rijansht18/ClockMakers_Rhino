@@ -41,12 +41,12 @@ body{
 
 .navbar-nav .nav-item .nav-link:hover {
     color: var(--turtey-color) !important;
-    text-decoration: underline;
+    margin-top: 10px !important;
 }
   
 .navbar-nav .nav-item .nav-link.active {
     color: var(--turtey-color) !important; 
-    text-decoration: underline;
+    margin-top: 10px !important;
 }
   
 
