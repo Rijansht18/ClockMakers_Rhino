@@ -13,6 +13,7 @@
     --last-color:#D1F8EF;
     --white:#ffff;
     --blacks:#0000;
+    --header:rgb(6, 6, 122);
 }
 
 a{
@@ -25,30 +26,31 @@ body{
     font-family: "Merriweather", serif;
 }
 
-.navbar{
+.navbar {
     position: relative;
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--header);
     transition: top 0.3s ease-in-out;
-    width: 100%;
 }
 
 .navbar-nav .nav-item .nav-link {
     color: white; /* Keeps the text color white by default */
     text-decoration: none; /* Removes underline by default */
-    transition: color 0.5s ease, text-decoration 0.3s ease; /* Transition for color and text-decoration */
-  }
+    transition: transform 0.2s ease-in-out, color 0.5s ease; /* Transition for transform and color */
+}
 
 .navbar-nav .nav-item .nav-link:hover {
     color: var(--turtey-color) !important;
-    margin-top: 10px !important;
+    
+    transform: scale(1.05); /* Small zoom effect on hover */
+    
 }
-  
+
 .navbar-nav .nav-item .nav-link.active {
-    color: var(--turtey-color) !important; 
-    margin-top: 10px !important;
+    color: var(--turtey-color) !important;
+    
 }
-  
+ 
 
 .logo{
     width: 50px;
@@ -422,10 +424,112 @@ label {
 }
 
 footer{
-    background: var(--last-color);
+    background: var(--header);
+    color: var(--last-color) !important;
 }
 
 footer ul li{
     list-style: none;
     font-size: 22px;
+}
+
+footer ul li a{
+    color: var(--last-color) !important;
+
+}
+
+
+/* General Styles for the steps */
+.yoga-steps {
+    list-style: none;
+    padding: 0;
+}
+
+.yoga-steps li {
+    background-color: #E0F2F7; /* Sky Blue */
+    margin-bottom: 8px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    opacity: 0; /* Initially hide the steps */
+    transform: translateY(20px); /* Move steps down slightly */
+    animation: fadeInUp 0.5s forwards; /* Apply animation */
+}
+
+/* Apply specific animation delays to each step */
+/* Adjust these delays to your liking */
+.yoga-steps li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.yoga-steps li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.yoga-steps li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.yoga-steps li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.yoga-steps li:nth-child(5) {
+    animation-delay: 1.0s;
+}
+
+.yoga-steps li:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.yoga-steps li:nth-child(7) {
+    animation-delay: 1.4s;
+}
+
+.yoga-steps li:nth-child(8) {
+    animation-delay: 1.6s;  /* Add more delays if you have more steps */
+}
+
+.yoga-steps li strong {
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+    display: inline-block;
+    min-width: 50px;
+    text-align: right;
+}
+
+/* Keyframes for the fadeInUp animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Specific adjustments for the modal layout */
+.modal-body .row.marginCustom {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.yoga-img-container {
+    text-align: center;
+}
+
+.yoga-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.yoga-step-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    color: #555;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
